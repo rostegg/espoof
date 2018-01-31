@@ -1,0 +1,4 @@
+rootProject.name = 'email-spoofing-webextension'
+include 'options'
+include 'email-panel'
+

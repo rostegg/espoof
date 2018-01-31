@@ -1,0 +1,30 @@
+group 'com.rostegg.webextensions'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.2.20'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+
+    apply plugin: 'kotlin-dce-js'
+    apply plugin: 'kotlin2js'
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    }
+
+
+}

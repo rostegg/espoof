@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Email Spoofer",
+  "version": "1.0",
+  "description": "Send email from browser",
+  "icons": {
+    "48": "icons/email.svg"
+  },
+  "permissions": [
+    "activeTab", "tabs","browsingData", "notifications", "storage"
+  ],
+  "sidebar_action": {
+    "default_icon": "icons/email.svg",
+    "default_panel": "email-panel/src/main/resources/panel.html"
+  },
+  "options_ui": {
+    "page": "options/src/main/resources/options.html"
+  }
+}

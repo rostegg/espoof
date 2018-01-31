@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":options" external.linked.project.path="$MODULE_DIR$/../../options" external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="email-spoofing-webextension" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="3" platform="JavaScript " useProjectSettings="false">
+        <testOutputPath>$MODULE_DIR$/../../options/build/classes/test/options_test.js</testOutputPath>
+        <compilerSettings />
+        <compilerArguments>
+          <option name="outputFile" value="$MODULE_DIR$/../../options/build/classes/main/options.js" />
+          <option name="noStdlib" value="true" />
+          <option name="metaInfo" value="true" />
+          <option name="target" value="v5" />
+          <option name="main" value="call" />
+          <option name="languageVersion" value="1.2" />
+          <option name="apiVersion" value="1.2" />
+          <option name="pluginOptions">
+            <array />
+          </option>
+          <option name="pluginClasspaths">
+            <array />
+          </option>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../options/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../options/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../options">
+      <sourceFolder url="file://$MODULE_DIR$/../../options/src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../options/src/test/kotlin" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../options/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../options/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../options/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../options/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../options/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.20" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.20" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.2.20" level="project" />
+  </component>
+</module>

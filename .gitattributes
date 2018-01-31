@@ -1,0 +1,4 @@
+*/build/* linguist-vendored
+*.js linguist-language=Kotlin
+*.css linguist-language=Kotlin
+*.html linguist-language=Kotlin

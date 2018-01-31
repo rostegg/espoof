@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 30em;
+            font-family: "Open Sans Light", sans-serif;
+            font-size: 0.9em;
+            font-weight: 300;
+        }
+
+        /*input fields*/
+        .text-input{
+            position: relative;
+            margin-top: 50px;
+            margin-left: 20px;
+            display:inline-block;
+            width: 600px;
+        }
+        input{
+            width: 500px;
+            height: 40px;
+            box-sizing: border-box;
+            display: inline;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            padding: 10px 10px 10px 150px;
+            transition: all 0.1s ease-out;
+        }
+
+        input + label{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            border-radius: 3px 0 0 3px;
+            padding: 0 20px;
+            background: deepskyblue;
+            transform: translateZ(0) translateX(0);
+            transition: all 0.3s ease-in;
+            transition-delay: 0.2s;
+        }
+
+        input:focus + label{
+            transform: translateY(-120%) translateX(0%);
+            border-radius: 3px;
+            transition: all 0.1s ease-out;
+        }
+
+        input:focus{
+            padding: 10px;
+            transition: all 0.3s ease-out;
+            transition-delay: 0.2s;
+        }
+
+        /*buttons*/
+        a {
+            border: none;
+            cursor:pointer;
+            border-radius:0;
+        }
+        .save-btn {
+            display: inline-block;
+            vertical-align: top;
+            padding: 8px 14px 10px;
+            margin-top: 1px;
+            margin-bottom: 25px;
+            border: 1px solid;
+            border-radius: 9px;
+            font-size: 18px;
+            font-weight: 300;
+            text-decoration: none;
+            color : deepskyblue;
+            background: white;
+        }
+        .save-btn:hover{
+            color : white;
+            background: deepskyblue;
+        }
+
+    </style>
+</head>
+<body>
+<div class="text-input">
+    <input type="text" id="server-address" placeholder="Address of spoof server in format http|https://IP:PORT">
+    <label for="server-address">Spoof server</label>
+    <a class="save-btn" id="save-address-btn">Save</a>
+</div>
+
+<div class="text-input">
+    <input type="text" id="username" placeholder="Username for authenticate SMTP server if require">
+    <label for="username">Username</label>
+    <a class="save-btn" id="save-username-btn">Save</a>
+</div>
+
+<div class="text-input">
+    <input type="password" id="password" placeholder="Password for authenticate SMTP server if require">
+    <label for="password">Password</label>
+    <a class="save-btn" id="save-password-btn">Save</a>
+</div>
+
+
+<script src="../../../build/kotlin-js-min/main/kotlin.js"></script>
+<script src="../../../build/kotlin-js-min/main/options.js"></script>
+</body>
+</html>

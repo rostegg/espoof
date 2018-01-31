@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .text-area{
+            box-sizing: border-box;
+            margin: 20px 0px 20px 0px;
+
+            width: 100%;
+            max-width: 100%;
+            min-height: 200px;
+
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<input type="text" id="from-mail" placeholder="Email from which the letter will come">
+<input type="text" id="to-mail" placeholder="Email where to send">
+<input type="text" id="sign" placeholder="Signature (John McRaw <john@mail.com>)">
+<input type="text"id="subject" placeholder="Subject of letter">
+<textarea class="text-area" id="body-mail"></textarea>
+<input id="attach-btn" type="file"/>
+<button id="send-btn">Send</button>
+<button id="clear-btn">Clear</button>
+<script src="../../../build/kotlin-js-min/main/kotlin.js"></script>
+<script src="../../../build/kotlin-js-min/main/email-panel.js"></script>
+</body>
+</html>
