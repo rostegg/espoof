@@ -2,29 +2,26 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/dictionaries
+webextension/.idea/**/workspace.xml
+webextension/.idea/**/tasks.xml
+webextension/.idea/dictionaries
 
 # Sensitive or high-churn files:
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.xml
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
+webextension/.idea/**/dataSources/
+webextension/.idea/**/dataSources.ids
+webextension/.idea/**/dataSources.xml
+webextension/.idea/**/dataSources.local.xml
+webextension/.idea/**/sqlDataSources.xml
+webextension/.idea/**/dynamic.xml
+webextension/.idea/**/uiDesigner.xml
 
 # Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
+webextension/.idea/**/gradle.xml
+webextension/.idea/**/libraries
 
-# CMake
-cmake-build-debug/
-cmake-build-release/
 
 # Mongo Explorer plugin:
-.idea/**/mongoSettings.xml
+webextension/.idea/**/mongoSettings.xml
 
 ## File-based project format:
 *.iws
@@ -32,34 +29,17 @@ cmake-build-release/
 ## Plugin-specific files:
 
 # IntelliJ
-out/
+webextension/out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+webextension/.idea_modules/
 
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Cursive Clojure plugin
-.idea/replstate.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-
-.gradle
-/build/
+webextension/.gradle
+webextension/build/
 
 # Ignore Gradle GUI config
-gradle-app.setting
+webextension/gradle-app.setting
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 
-# Cache of project
-.gradletasknamecache
-
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
