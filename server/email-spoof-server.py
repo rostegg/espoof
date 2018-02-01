@@ -6,6 +6,7 @@ import json
 import base64
 import time
 from socket import *
+import ssl
 
 default_ip  = "localhost"
 default_http_port = 8081
@@ -129,6 +130,10 @@ def run_http_server(ip,port):
 	server_address = (ip,port)
 	httpd = HTTPServer(server_address, HTTPServer_RequestHandler) 
 	print('- Server is runing, waiting for requests...')
+	# generate selfmaid certificate using openssl : openssl req -new -x509 -keyout certificate.pem -out certificate.pem -days 365 -nodes
+	if results.certificate_path != None:
+		print('- Using certificate %s...'%(results.certificate_path))
+		httpd.socket = ssl.wrap_socket (httpd.socket, certfile=results.certificate_path, server_side=True)
 	httpd.serve_forever()
 
 def main(argv):
@@ -162,6 +167,7 @@ def main(argv):
 	parser.add_argument('-p','--hport', action='store', dest='hport', type=int,help='Port on which the server will be deployed (by default 8081)')
 	parser.add_argument('-s','--sip', action='store', dest='sip', help='The address of SMTP server (by default localhost)')
 	parser.add_argument('-d','--sport', action='store', dest='sport', type=int,help='Port of SMTP server (by default 25)')
+	parser.add_argument('-c','--certificate', action='store', dest='certificate_path', help='Path to SSL certificate for https connection (can be generated using openssl)')
 	global results
 	results=parser.parse_args()
 	signal(SIGINT, sigint_handler)
