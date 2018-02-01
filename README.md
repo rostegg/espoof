@@ -9,10 +9,11 @@
 ```
 python3 email-spoof-server.py
 Options:
-    -i, --hip      The address on which the server will be deployed (by default localhost)
-    -p, --hport    Port on which the server will be deployed (by default 8081)
-    -s, --sip      The address of SMTP server (by default localhost)
-    -d, --sport    Port of SMTP server (by default 25)
+    -i, --hip               The address on which the server will be deployed (by default localhost)
+    -p, --hport             Port on which the server will be deployed (by default 8081)
+    -s, --sip               The address of SMTP server (by default localhost)
+    -d, --sport             Port of SMTP server (by default 25)
+    -c, --certificate       Path to SSL certificate for https connection (can be generated using openssl)  
 ```
 Example:
 
@@ -55,6 +56,10 @@ You can access the server using POST request with json data:
   "file_name": "file.pdf" <optional parameter, name of attachment file>
 }
 ```
+# Access to server through https
+If you want to access the server from webextension via https, first you need to add a certificate
+In firefox it can be done simply: 
+    - FireFox -> Options -> Advanced -> Certificates -> View Certificates -> Servers -> Add Exception.
 
 # Example of usage
 
