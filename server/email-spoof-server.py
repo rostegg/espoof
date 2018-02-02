@@ -1,5 +1,4 @@
 import argparse
-from signal import signal, SIGINT
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import sys
 import json
@@ -13,7 +12,7 @@ default_http_port = 8081
 default_smtp_port = 25
 
 # smtp commands
-hello_command = 'EHLO hostname\r\n'
+hello_command = 'EHLO\r\n'
 marker = "MARKER"
 endmsg = "\r\n.\r\n"
 mail_from = "MAIL FROM:<%s>\r\n"
@@ -65,17 +64,7 @@ class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
 		content_length = int(self.headers['Content-Length'])
 		post_data = self.rfile.read(content_length)
 		j = json.loads(post_data.decode('utf-8'))
-		global smtp_result
-		if results.sip!= None:
-			if results.sport!= None:
-				smtp_result =send_mail_request(j,results.sip,results.sport)
-			else:
-				smtp_result = send_mail_request(j,results.sip,default_smtp_port)
-		else:
-			if results.sport!= None:
-				smtp_result = send_mail_request(j,default_ip, results.sport)
-			else:
-				smtp_result = send_mail_request(j,default_ip, default_smtp_port)
+		smtp_result = send_mail_request(j,results.sip if results.sip!=None else default_ip, results.sport if results.sport!=None else default_smtp_port)
 		if smtp_result[0]:
 			self.wfile.write(("Message was successfully sent. %s"%(smtp_result[1])).encode())
 		else:
@@ -121,9 +110,6 @@ def send_mail_request(data,ip,port):
 	except:
 		print("Unexpected error: %s"%(sys.exc_info()[0]))
 		return(False,"Unexpected error: %s"%(sys.exc_info()[0]))
-	        
-def sigint_handler(signum, frame):
-	sys.exit(1)
 
 def run_http_server(ip,port):
 	print('- Starting http-server on %s:%s'%(ip,port))
@@ -170,18 +156,8 @@ def main(argv):
 	parser.add_argument('-c','--certificate', action='store', dest='certificate_path', help='Path to SSL certificate for https connection (can be generated using openssl)')
 	global results
 	results=parser.parse_args()
-	signal(SIGINT, sigint_handler)
-
-	if results.hip != None :
-		if results.hport != None :
-			run_http_server(results.hip,results.hport)
-		else:
-			run_http_server(results.hip,default_http_port)
-	else:
-		if results.hport != None :
-			run_http_server(default_ip, results.hport)
-		else:
-			run_http_server(default_ip, default_http_port)
+	run_http_server(results.hip if results.hip!=None else default_ip, results.hport if results.hport!=None else default_http_port)
+	
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
