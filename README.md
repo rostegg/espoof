@@ -3,7 +3,7 @@
 [![Compatibility](https://img.shields.io/badge/python-3.5-brightgreen.svg)](https://github.com/rostegg/email-spoofing-server)
 [![License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rostegg/email-spoofing-server/blob/master/LICENSE)
 
-![Logo](../assets/logo.png?raw=true)
+![ServerExample](../assets/example_run.png?raw=true)
 
 # Server usage
 ```
@@ -15,9 +15,6 @@ Options:
     -d, --sport             Port of SMTP server (by default 25)
     -c, --certificate       Path to SSL certificate for https connection (can be generated using openssl)  
 ```
-Example:
-
-![ServerExample](../assets/example_run.png?raw=true)
 
 # Webextension usage
 you can install [webextension](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) from package or temporarily install the addon by adding a manifest.json file (tutorial for firefox [here](https://developer.mozilla.org/en-US/docs/Tools/about%3Adebugging))
