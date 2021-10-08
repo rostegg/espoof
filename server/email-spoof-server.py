@@ -53,9 +53,9 @@ class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
 		self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
 		self.send_header("Access-Control-Allow-Headers", "Origin,Content-Type,Accept,Connection")
 		self.end_headers()
+		
 	def do_OPTIONS(self):
 		self._set_headers()
-
 
 	def do_POST(self):
 		print("- Recived POST request from %s"%(self.client_address[0]))
@@ -150,14 +150,13 @@ def main(argv):
 """)
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-i','--hip', action='store', dest='hip', help='The address on which the server will be deployed (by default localhost)')
-	parser.add_argument('-p','--hport', action='store', dest='hport', type=int,help='Port on which the server will be deployed (by default 8081)')
+	parser.add_argument('-p','--hport', action='store', dest='hport', type=int, help='Port on which the server will be deployed (by default 8081)')
 	parser.add_argument('-s','--sip', action='store', dest='sip', help='The address of SMTP server (by default localhost)')
 	parser.add_argument('-d','--sport', action='store', dest='sport', type=int,help='Port of SMTP server (by default 25)')
 	parser.add_argument('-c','--certificate', action='store', dest='certificate_path', help='Path to SSL certificate for https connection (can be generated using openssl)')
 	global results
 	results=parser.parse_args()
-	run_http_server(results.hip if results.hip!=None else default_ip, results.hport if results.hport!=None else default_http_port)
-	
+	run_http_server(results.hip if results.hip!=None else default_ip, results.hport if results.hport!=None else default_http_port)	
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
