@@ -17,7 +17,16 @@ Options:
 ```
 
 # Webextension usage
-you can install [webextension](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) from package or temporarily install the addon by adding a manifest.json file (tutorial for firefox [here](https://developer.mozilla.org/en-US/docs/Tools/about%3Adebugging))
+:warning: Extension was just experiment with KotlinToJs, better write webextensions in JS to avoid problems with the correct work of the extensions
+
+You can install [webextension](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) from package or temporarily install the addon by adding a manifest.json file (tutorial for firefox [here](https://developer.mozilla.org/en-US/docs/Tools/about%3Adebugging))
+
+## Build
+```
+chmod +x webextension/build.sh
+sh webextension/build.sh
+```
+Or just use command in 'webextension' directory: `./gradlew runDceKotlinJs --continuous`
 
 Extension was tested only on Firefox
 
